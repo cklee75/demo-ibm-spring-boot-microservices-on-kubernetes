@@ -14,7 +14,7 @@ spec:
     app: office-space
     tier: notification
 ---
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: send-notification
@@ -23,6 +23,10 @@ metadata:
 spec:
   strategy:
     type: Recreate
+  selector:
+    matchLabels:
+      app: office-space
+      tier: notification
   template:
     metadata:
       labels:
@@ -30,16 +34,16 @@ spec:
         tier: notification
     spec:
       containers:
-        - image: anthonyamanse/send-notification:v1
+        - image: tgi01054/spring-demo-ibm-send-notification 
           imagePullPolicy: Always
           name: send-notification
           env:
             - name: GMAIL_SENDER_USER
-              value: 'username@gmail.com'
+              value: 'tgi01054@gmail.com'
             - name: GMAIL_SENDER_PASSWORD
-              value: 'password@gmail.com'
+              value: '8234kknd^&'
             - name: EMAIL_RECEIVER
-              value: 'sendTo@gmail.com'
+              value: 'tgi01054@gmail.com'
             - name: OPENWHISK_API_URL_SLACK
               value: ''
             - name: NOTIFICATION_MESSAGE

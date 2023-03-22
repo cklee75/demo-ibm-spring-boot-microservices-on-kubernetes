@@ -14,7 +14,7 @@ spec:
     app: office-space
     tier: compute
 ---
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: compute-interest-api
@@ -23,6 +23,10 @@ metadata:
 spec:
   strategy:
     type: Recreate
+  selector:
+    matchLabels:
+      app: office-space
+      tier: compute 
   template:
     metadata:
       labels:
@@ -30,7 +34,7 @@ spec:
         tier: compute
     spec:
       containers:
-        - image: anthonyamanse/compute-interest-api:v1
+        - image: tgi01054/spring-demo-ibm-compute-interest-api 
           imagePullPolicy: Always
           name: compute-interest-api
           env:
