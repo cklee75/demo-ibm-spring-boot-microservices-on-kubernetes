@@ -41,11 +41,11 @@ spec:
           name: send-notification
           env:
             - name: GMAIL_SENDER_USER
-              value: 'tgi01054@gmail.com'
+              value: 'username@gmail.com'
             - name: GMAIL_SENDER_PASSWORD
-              value: '8234kknd^&'
+              value: 'password@gmail.com'
             - name: EMAIL_RECEIVER
-              value: 'tgi01054@gmail.com'
+              value: 'sendTo@gmail.com'
             - name: OPENWHISK_API_URL_SLACK
               value: ''
             - name: NOTIFICATION_MESSAGE
