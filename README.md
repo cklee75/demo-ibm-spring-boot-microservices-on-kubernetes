@@ -353,3 +353,6 @@ account-summary         10.10.10.74    <nodes>       80:30080/TCP               
 This code pattern is licensed under the Apache Software License, Version 2.  Separate third party code objects invoked within this code pattern are licensed by their respective providers pursuant to their own separate licenses. Contributions are subject to the [Developer Certificate of Origin, Version 1.1 (DCO)](https://developercertificate.org/) and the [Apache Software License, Version 2](http://www.apache.org/licenses/LICENSE-2.0.txt).
 
 [Apache Software License (ASL) FAQ](http://www.apache.org/foundation/license-faq.html#WhatDoesItMEAN)
+
+### Own Notes
+account-summary, which is written in Node.js Javascript, it has backend scheduler (server.js) that has direct SQL to account-database, then emit to socket account channel to AngularJS frontend (app.js), which display the total.
